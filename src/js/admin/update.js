@@ -95,11 +95,20 @@ function showLoader(id) {
  * Hide spinner and show save icon again
  * @param id
  */
-function hideLoader(id) {
-    document.getElementById(`${id}-btn`).style.display = 'block';
-    const loader = document.getElementById(`${id}-loader`)
-    if (loader)
-        loader.style.display = 'none';
+ function hideLoader(id) {
+    if (document.getElementById(`${id}-btn`)) {
+        document.getElementById(`${id}-btn`).style.display = 'block';
+        const loader = document.getElementById(`${id}-loader`)
+        if (loader)
+            loader.style.display = 'none';
+    }
+
+    if (document.getElementById(`${id}-switch`)) {
+        document.getElementById(`${id}-switch`).style.display = 'block';
+        const loader = document.getElementById(`${id}-loader`)
+        if (loader)
+            loader.style.display = 'none';
+    }
 }
 
 /**
